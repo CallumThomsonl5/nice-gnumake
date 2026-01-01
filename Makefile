@@ -2,7 +2,7 @@ BUILD_DIR := build
 SRC_DIR := src
 
 SRCS := fuck.c shit.c lib/lib.c
-SRCS := $(patsubst %,$(SRC_DIR)/%,$(SRCS))
+SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)%.c=$(BUILD_DIR)%.o)
 
 CFLAGS += -Iinclude
