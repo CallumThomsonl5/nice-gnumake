@@ -8,6 +8,8 @@ OBJS := $(SRCS:$(SRC_DIR)%.c=$(BUILD_DIR)%.o)
 CFLAGS += -Iinclude
 LDFLAGS =
 
+.PHONY: clean
+
 $(BUILD_DIR)/main: $(OBJS)
 	@mkdir -p $(dir $@)
 	@$(CC) $(LDFLAGS) $(OBJS) -o $(BUILD_DIR)/main
